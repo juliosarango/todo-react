@@ -1,0 +1,72 @@
+
+Skip to content
+
+    Pull requests
+    Issues
+    Marketplace
+    Explore
+
+    @juliosarango
+
+0
+8
+
+    2
+
+codewithbernard/react-redux-firebase
+Code
+Issues 1
+Pull requests 0
+Projects 0
+Wiki
+Insights
+react-redux-firebase/src/components/ToDoList.css
+ae2180c on 5 Apr
+@codewithbernard codewithbernard Adding sign out
+47 lines (37 sloc) 580 Bytes
+.to-do-list-container {
+  margin-top: 25px;
+}
+
+.to-do-list-item {
+  margin-top: 10px;
+  color: white;
+  transition: background-color 1s;
+}
+
+.to-do-list-item h4 {
+  padding-left: 25px;
+  padding-bottom: 5px;
+}
+
+.to-do-list-item:hover {
+  background-color: #26a69a !important;
+}
+
+.complete-todo-item {
+  float: right;
+  right: 20px;
+}
+
+#todo-add-form {
+  animation-duration: 1s;
+  animation-name: slidein;
+}
+
+#nothing-was-found {
+  margin-top: 150px;
+}
+
+#sign-out-button {
+  margin-right: 15px;
+}
+
+@keyframes slidein {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    margin-left: 1;
+  }
+}

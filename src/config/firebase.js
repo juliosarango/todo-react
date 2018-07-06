@@ -1,8 +1,12 @@
 import * as firebase from 'firebase'
 
-import { FirebaseConfig } from '../config/keys'
+import { FirebaseConfig } from './keys'
 
-firebase.initializaApp( FirebaseConfig );
+firebase.initializeApp( FirebaseConfig );
 
-const databseRef = firebase.database().ref();
+const databaseRef = firebase.database().ref();
 export const todosRef = databaseRef.child("todos");
+
+export const authRef = firebase.auth();
+
+export const provider = new firebase.auth.GoogleAuthProvider();

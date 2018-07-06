@@ -1,21 +1,27 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import ToDoList from './components/ToDoList'
+
+import Signin from './components/SignIn'
+import requireAuth from './components/auth/requireAuth'
+import { BrowserRouter, Route } from 'react-router-dom'
+import { connect } from 'react-redux'
+import { fetchUser } from './actions'
 
 class App extends Component {
+  componentWillMount() {
+    this.props.fetchUser();
+  }
+
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-      </div>
+      <BrowserRouter>
+         <div className="container">
+            <Route exact path="/" component={Signin} />
+            <Route path="/app" component={requireAuth(ToDoList)} />
+         </div>
+      </BrowserRouter>
     );
   }
 }
 
-export default App;
+export default connect(null, { fetchUser }) (App)

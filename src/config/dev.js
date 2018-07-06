@@ -5,5 +5,4 @@ export const FirebaseConfig = {
     projectId: "todos-91193",
     storageBucket: "",
     messagingSenderId: "355541096748"
-  };
-  firebase.initializeApp(config);
+  }

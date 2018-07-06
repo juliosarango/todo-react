@@ -12,11 +12,17 @@ import reducers from './reducers'
 import "materialize-css/dist/css/materialize.min.css";
 import "materialize-css/dist/js/materialize.min.js";
 
-const store = createStore(reducers, {}, applyMiddleware(reduxThunk))
+ /* eslint-disable no-underscore-dangle */
+const store = createStore(
+  reducers, {},
+  applyMiddleware(reduxThunk),
+  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+);
+/* eslint-enable */
 
 ReactDOM.render(
   <Provider store={store}>
      <App />
-  </Provider>, document.getElementById('root')  
+  </Provider>, document.getElementById('root')
 );
 registerServiceWorker();
